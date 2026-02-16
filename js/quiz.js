@@ -37,12 +37,12 @@ const TYPES = {
     name: 'The Quiet Performer',
     tagline: 'Things look fine from the outside. That\'s part of the problem.',
     description: [
-      'This one can be hard to explain to people, because from the outside, your life looks good. Maybe even enviable. You\'re competent, capable, and you\'ve built something that works. The problem is that "works" and "feels right" are not always the same thing.',
+      'From the outside, your life looks good. Maybe even enviable. You\'re competent, capable, and you\'ve built something that works. The problem is that "works" and "feels right" are not always the same thing.',
       'You\'ve probably been aware of it for some time: there\'s a gap between the life people see and the one you actually experience. It\'s not that you\'re unhappy, exactly. It\'s more like a quiet sense of disconnection. A feeling of going through the motions. Of being very good at a role that doesn\'t quite fit anymore.',
       'The tricky thing about this pattern is that it doesn\'t feel urgent enough to act on. Nobody is in crisis. Nothing is broken. And so you carry on, because what would you even say? "My perfectly fine life doesn\'t feel like mine"? It sounds ungrateful, even to your own ears.',
       'But it\'s not ungrateful. It\'s honest. And that honesty, the willingness to admit that something is off even when it\'s hard to put into words, is something most people never reach.'
     ],
-    strength: 'You\'ve handled difficult situations and demanding environments well. The fact that you can sense "something is off" is itself something most people never develop.',
+    strength: 'Self-awareness. Most people in your position don\'t even notice the gap. The fact that you can feel something is off, even when everything looks fine, is a form of honesty that takes real courage.',
     need: 'A space where you don\'t have to perform. Where you can say "I don\'t know what I want" or "I\'m not sure this is enough" without it being dramatic. Sometimes the most helpful thing is simply being heard.',
     cta: 'If something here rang true, I\'m here. A free, 30-minute conversation is a quiet, confidential first step. No sales pitch, no obligation. Just a chance to say the things you haven\'t said out loud yet.'
   },
@@ -54,7 +54,7 @@ const TYPES = {
       'You hold a lot. And you hold it well. That\'s not flattery, it\'s just a fact. You\'re the person who remembers, who organises, who shows up. The one people count on. And you don\'t resent it, not really. You care about the things you carry. The people, the responsibilities, the roles. They matter to you.',
       'The trouble is, somewhere in all that juggling, you\'ve lost track of something: what you want. Not as a parent, partner, or professional. Just as you. It\'s been so long since you thought about your own needs as separate from everyone else\'s that the question "what do you actually want?" might stop you in your tracks for a moment.',
       'This isn\'t because you\'re selfless to a fault (though you might be). It\'s because your identity has become so intertwined with your roles that it\'s hard to find where they end and you begin. "What everyone needs" and "what I want" have merged, and unpicking them feels complicated. Maybe even a bit frightening.',
-      'But here\'s the thing: you can\'t pour from a cup that\'s been empty for this long. And the people who rely on you would be the first to say you deserve something for yourself. You\'re just the last person to believe it.'
+      'But here\'s the thing: the people who rely on you would be the first to say you deserve something for yourself. You\'re just the last person to believe it.'
     ],
     strength: 'Real emotional intelligence and the ability to hold multiple competing demands well. You\'re the person everyone leans on because you\'re good at it.',
     need: 'Time that is just for you. A proper conversation where someone asks you, with real curiosity, what you want, and then listens without needing anything from you in return.',
@@ -63,9 +63,9 @@ const TYPES = {
   nearly: {
     key: 'nearly',
     name: 'The Nearly Ready',
-    tagline: 'You\'re closer to change than you think. Closer than any of the other types.',
+    tagline: 'You\'re closer to change than you think.',
     description: [
-      'You\'re closer to change than you think. In fact, you\'re closer than any of the other types. You know what you want, or at least you know the direction. You\'ve probably started to make it happen more than once. You\'ve thought about it, talked about it, maybe even taken a first step.',
+      'You\'re closer to change than you think. You know what you want, or at least you know the direction. You\'ve probably started to make it happen more than once. You\'ve thought about it, talked about it, maybe even taken a first step.',
       'And then something pulled you back.',
       'It might have been a wobble of confidence. A practical concern that suddenly loomed larger. A fear you couldn\'t quite name. Or just the weight of making a real, irreversible decision. So you retreated to the planning stage, where it feels safer. Where the change is still a possibility and not a commitment.',
       'The pattern here isn\'t avoidance. It\'s something more subtle. You\'re not afraid of change itself. You\'re afraid of getting it wrong. Of leaping and discovering you\'ve landed in the wrong place. So you keep rehearsing the jump without ever leaving the edge. But notice this: you keep coming back. You keep standing at that edge. That isn\'t indecision. That\'s determination.'
@@ -125,10 +125,10 @@ const QUESTIONS = [
     number: 5,
     text: 'How do you typically spend the last hour before bed?',
     options: [
-      { text: 'Going over the day, wondering if I handled things well enough. Mentally preparing for tomorrow.', type: 'performer' },
+      { text: 'Replaying conversations, wondering if people saw through the "I\'m fine." Trying to get comfortable in a life that looks right but doesn\'t feel it.', type: 'performer' },
       { text: 'Scrolling, reading, watching something. Anything to switch off from the mental noise.', type: 'weigher' },
       { text: 'Running through the list of everything I need to do for other people tomorrow.', type: 'juggler' },
-      { text: 'Thinking "tomorrow I\'ll start making changes." And meaning it, in that moment.', type: 'postponer' },
+      { text: 'Telling myself I\'ll think about it properly at the weekend, or once things slow down a bit.', type: 'postponer' },
       { text: 'Feeling restless. Like there\'s something I should be doing but I can\'t quite bring myself to start.', type: 'nearly' }
     ]
   },
@@ -174,6 +174,9 @@ const QUESTIONS = [
 let currentQuestion = 0;
 let answers = [];
 let scores = { postponer: 0, weigher: 0, performer: 0, juggler: 0, nearly: 0 };
+
+// Weighted scoring: diagnostic questions count more, weak questions count less
+const QUESTION_WEIGHTS = [1.0, 1.0, 1.5, 1.5, 0.75, 1.0, 1.0, 1.25];
 
 // ========================================
 // DOM helpers
@@ -256,10 +259,14 @@ function selectOption(el) {
   options.forEach(o => o.classList.remove('selected'));
   el.classList.add('selected');
 
-  // Record answer
+  // Record answer (undo any previous answer for this question first)
   const type = el.dataset.type;
+  const weight = QUESTION_WEIGHTS[currentQuestion];
+  const previousType = answers[currentQuestion];
+  if (previousType) scores[previousType] -= weight;
+
   answers[currentQuestion] = type;
-  scores[type]++;
+  scores[type] += weight;
 
   // Auto-advance after a brief pause
   setTimeout(() => {
@@ -268,6 +275,11 @@ function selectOption(el) {
       renderQuestion(currentQuestion);
       updateProgress();
     } else {
+      // Show result teaser on email gate
+      const typeKey = calculateResult();
+      const typeName = TYPES[typeKey].name;
+      $('#email-result-label').textContent = 'Your result';
+      $('#email-result-name').textContent = typeName;
       showScreen('email-screen');
     }
   }, 400);
@@ -277,7 +289,7 @@ function goBack() {
   if (currentQuestion > 0) {
     // Undo the last answer's score
     const lastType = answers[currentQuestion];
-    if (lastType) scores[lastType]--;
+    if (lastType) scores[lastType] -= QUESTION_WEIGHTS[currentQuestion];
 
     currentQuestion--;
     renderQuestion(currentQuestion);
@@ -286,7 +298,7 @@ function goBack() {
 }
 
 function updateProgress() {
-  const pct = ((currentQuestion) / QUESTIONS.length) * 100;
+  const pct = ((currentQuestion + 1) / QUESTIONS.length) * 100;
   $('.progress-bar').style.width = pct + '%';
   $('.progress-step').textContent = `Question ${currentQuestion + 1} of ${QUESTIONS.length}`;
 
@@ -373,7 +385,38 @@ function showResults() {
   // CTA
   $('#result-cta-text').textContent = type.cta;
 
+  // Secondary type (show if second-highest score is within 1 point of primary)
+  const sortedScores = Object.entries(scores)
+    .filter(([key]) => key !== typeKey)
+    .sort((a, b) => b[1] - a[1]);
+
+  const secondaryEl = $('#secondary-type');
+  if (sortedScores.length > 0 && sortedScores[0][1] >= scores[typeKey] - 1 && sortedScores[0][1] > 0) {
+    const secondaryType = TYPES[sortedScores[0][0]];
+    $('#secondary-text').textContent = `You also scored highly as ${secondaryType.name}. That makes sense. Most of us carry more than one pattern.`;
+    secondaryEl.style.display = '';
+  } else {
+    secondaryEl.style.display = 'none';
+  }
+
   showScreen('results-screen');
+}
+
+function shareResult() {
+  const name = $('#result-name').textContent;
+  const url = window.location.origin + window.location.pathname;
+  const text = `I'm ${name}. Take the quiz to find out what's really keeping you stuck: ${url}`;
+
+  if (navigator.share) {
+    navigator.share({ title: 'What\'s Really Keeping You Stuck?', text: text, url: url }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = $('.share-btn');
+      const original = btn.innerHTML;
+      btn.textContent = 'Copied to clipboard';
+      setTimeout(() => { btn.innerHTML = original; }, 2000);
+    }).catch(() => {});
+  }
 }
 
 function retakeQuiz() {

@@ -77,7 +77,8 @@
        ======================================== -->
   <section id="email-screen" class="screen email-capture">
     <div class="email-inner">
-      <h2>Your result is ready.</h2>
+      <span class="label" id="email-result-label"></span>
+      <h2 id="email-result-name"></h2>
       <p class="subtitle">Pop your details in below and I'll send you a personalised breakdown of your result, along with a short reflection that might help you take the next step.</p>
 
       <form class="email-form" onsubmit="submitEmail(event)">
@@ -115,6 +116,11 @@
         </div>
       </div>
 
+      <!-- Secondary type (shown when close score) -->
+      <div id="secondary-type" class="secondary-type" style="display: none;">
+        <p id="secondary-text"></p>
+      </div>
+
       <!-- Strength & Need cards -->
       <div class="trait-grid">
         <div class="trait-card strength">
@@ -135,6 +141,17 @@
         <p id="result-cta-text"></p>
         <a href="https://juliathecoach.com/pages/30-minute-conversation" class="btn-primary" target="_blank" rel="noopener">Book a Free Conversation</a>
         <p class="cta-note">30 minutes. No pressure. No obligation.</p>
+      </div>
+
+      <!-- Share -->
+      <div class="share-wrap">
+        <p class="share-label">Know someone who might find this useful?</p>
+        <button class="share-btn" onclick="shareResult()">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M11 1.5a2.5 2.5 0 1 1-1.57 4.44L6.26 7.87a2.5 2.5 0 0 1 0 .26l3.17 1.93A2.5 2.5 0 1 1 8.57 11.44L5.43 9.56a2.5 2.5 0 1 1 0-3.12l3.14-1.88A2.5 2.5 0 0 1 11 1.5Z" stroke="currentColor" stroke-width="1.3"/>
+          </svg>
+          Share your result
+        </button>
       </div>
 
       <!-- Retake -->

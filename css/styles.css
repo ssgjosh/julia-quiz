@@ -489,6 +489,24 @@ p {
   line-height: 1.5;
 }
 
+.email-capture .label {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-bottom: 8px;
+}
+
+#email-result-name {
+  font-family: 'Domine', Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--navy);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
 .skip-link {
   display: inline-block;
   margin-top: 20px;
@@ -604,6 +622,23 @@ p {
   margin-bottom: 0;
 }
 
+/* Secondary type */
+.secondary-type {
+  background: var(--taupe-pale);
+  border-left: 3px solid var(--taupe);
+  border-radius: var(--radius-sm);
+  padding: 18px 22px;
+  margin: 24px 0 4px;
+}
+
+.secondary-type p {
+  font-size: 0.95rem;
+  color: var(--charcoal-light);
+  font-style: italic;
+  margin: 0;
+  line-height: 1.6;
+}
+
 /* Strengths & needs */
 .trait-grid {
   display: grid;
@@ -685,6 +720,39 @@ p {
 }
 
 /* Retake */
+/* Share */
+.share-wrap {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.share-label {
+  font-size: 0.9rem;
+  color: var(--charcoal-muted);
+  margin-bottom: 12px;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  font-family: 'Cabin', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--navy);
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.share-btn:hover {
+  border-color: var(--navy);
+  background: var(--taupe-pale);
+}
+
 .retake-wrap {
   text-align: center;
   margin-top: 32px;
