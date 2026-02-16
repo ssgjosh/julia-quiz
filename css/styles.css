@@ -602,11 +602,21 @@ p {
   line-height: 1.65;
 }
 
+.results-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--taupe), transparent);
+}
+
 /* Results content */
 .results-content {
   max-width: 680px;
   margin: 0 auto;
-  padding: 48px 24px;
+  padding: 56px 24px;
 }
 
 .results-content .section {
@@ -614,11 +624,23 @@ p {
 }
 
 .results-content p {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   color: var(--charcoal);
   font-size: 1.02rem;
-  line-height: 1.75;
+  line-height: 1.8;
   max-width: 100%;
+}
+
+/* Drop cap on first description paragraph */
+#result-description > p:first-child::first-letter {
+  font-family: 'Domine', Georgia, serif;
+  font-size: 3.6em;
+  float: left;
+  line-height: 0.78;
+  padding-right: 10px;
+  padding-top: 5px;
+  color: var(--navy);
+  font-weight: 500;
 }
 
 .results-content .insight-card {
@@ -641,20 +663,36 @@ p {
   margin-bottom: 0;
 }
 
-/* Insight block -- visual break in results description */
+/* Insight block -- pull-quote visual break in results description */
 .insight-block {
-  background: var(--taupe-pale);
-  border-left: 3px solid var(--taupe);
-  border-radius: var(--radius-sm);
-  padding: 22px 26px;
-  margin: 28px 0;
+  background: var(--white);
+  border-left: 4px solid var(--taupe);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 28px 32px;
+  margin: 36px 0;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.insight-block::before {
+  content: '\201C';
+  font-family: 'Domine', Georgia, serif;
+  font-size: 4rem;
+  color: var(--taupe-light);
+  position: absolute;
+  top: 8px;
+  left: 18px;
+  line-height: 1;
+  pointer-events: none;
 }
 
 .insight-block p {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--charcoal);
   margin-bottom: 0;
-  line-height: 1.75;
+  line-height: 1.8;
+  padding-left: 24px;
+  font-style: italic;
 }
 
 /* Secondary type */
@@ -677,7 +715,20 @@ p {
 /* Strengths & needs -- warm taupe band */
 .results-traits-band {
   background: var(--taupe-pale);
-  padding: 48px 24px;
+  padding: 56px 24px;
+  position: relative;
+}
+
+.results-traits-band::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 3px;
+  background: var(--taupe);
+  border-radius: 2px;
 }
 
 .results-traits-inner {
@@ -686,31 +737,34 @@ p {
 }
 
 .trait-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
 }
 
 .trait-card {
-  padding: 0 0 0 20px;
-  border-left: 3px solid var(--taupe);
+  background: var(--white);
+  padding: 28px 24px;
+  border-radius: var(--radius-md);
+  border-top: 3px solid var(--taupe);
+  box-shadow: var(--shadow-sm);
 }
 
 .trait-card .trait-label {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--charcoal-muted);
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .trait-card.need {
-  border-left-color: var(--navy);
+  border-top-color: var(--navy);
 }
 
 .trait-card p {
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 0;
 }
@@ -723,10 +777,11 @@ p {
 /* CTA section */
 .results-cta {
   background: var(--white);
-  border-radius: var(--radius-md);
-  padding: 40px 32px;
+  border-radius: var(--radius-lg);
+  padding: 48px 36px;
   text-align: center;
   border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
 }
 
 .results-cta h3 {
@@ -868,8 +923,14 @@ p {
    ======================================== */
 
 @media (max-width: 768px) {
+  .trait-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .results-cta {
-    padding: 32px 24px;
+    padding: 36px 24px;
+    border-radius: var(--radius-md);
   }
 }
 
@@ -919,7 +980,21 @@ p {
   }
 
   .insight-block {
-    padding: 18px 20px;
+    padding: 22px 20px;
+  }
+
+  .insight-block::before {
+    font-size: 3rem;
+    top: 4px;
+    left: 12px;
+  }
+
+  .insight-block p {
+    padding-left: 16px;
+  }
+
+  #result-description > p:first-child::first-letter {
+    font-size: 3em;
   }
 
   .results-cta {
