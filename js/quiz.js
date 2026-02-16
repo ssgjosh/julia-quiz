@@ -229,6 +229,7 @@ function renderQuestion(index) {
     <div class="question-container active" data-question="${index}">
       <div class="question-number">Question ${q.number} of ${QUESTIONS.length}</div>
       <h2 class="question-text">${q.text}</h2>
+      ${index === 0 ? '<p class="question-hint">Pick whichever feels closest. There are no wrong answers.</p>' : ''}
       <div class="options">
         ${shuffled.map((opt, i) => `
           <button class="option" data-type="${opt.type}" data-index="${i}" onclick="selectOption(this)">

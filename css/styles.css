@@ -370,6 +370,14 @@ p {
   font-weight: 400;
 }
 
+.question-hint {
+  font-size: 0.88rem;
+  color: var(--charcoal-muted);
+  font-style: italic;
+  margin-top: -20px;
+  margin-bottom: 32px;
+}
+
 /* Answer options */
 .options {
   display: flex;
