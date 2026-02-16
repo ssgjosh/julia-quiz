@@ -9,13 +9,13 @@ const TYPES = {
     name: 'The Quiet Postponer',
     tagline: 'You know something needs to change. You\'ve known for a while.',
     description: [
-      'You have a pattern, and it\'s a kind one. When life gets busy or complicated, your own needs are the first thing you move to the bottom of the list. Not because you don\'t value them, but because there\'s always something more pressing, someone who needs you more, a reason why now isn\'t quite the right time.',
-      'The thing is, you\'ve been saying "not yet" for a while now. And on some level, you know that. There\'s a quiet frustration beneath the patience. A sense that your turn keeps being put off, not by anyone else, but by you.',
-      'Here\'s what I notice when I work with people who share this pattern: the waiting is rarely about timing. It\'s about permission. Somewhere along the way, you learned that your needs come after everyone else\'s. That taking time for yourself feels indulgent. That the "right moment" will announce itself clearly, when in truth it never does.',
-      'Your steadiness, your patience, your ability to hold everything together. These are real strengths. And the fact that you\'re here, taking this quiz, tells me something important: part of you already knows it\'s time.'
+      'You have a pattern, and it\'s a kind one. When life gets busy or complicated, your own needs quietly move to the bottom of the list. There\'s always something more pressing, or someone who needs you, or a perfectly good reason why now isn\'t the right time.',
+      'You\'ve been saying "not yet" for a while now. And on some level, you know that. There\'s a quiet frustration beneath all that patience, a sense that your turn keeps getting put off, and that you might be the one doing the putting off.',
+      'When I work with people who share this pattern, I notice the same thing. The waiting is rarely about timing. Somewhere along the way, you picked up the idea that your needs come after everyone else\'s. That taking time for yourself is indulgent. That the right moment will just arrive, even though it never does.',
+      'Your steadiness and patience are real strengths. And the fact that you\'re here, taking this quiz, tells me something important: part of you already knows it\'s time.'
     ],
-    strength: 'You hold an enormous amount together, and you do it well. You\'re patient, steady, and reliable. That same steadiness, turned inward, becomes the foundation for real, lasting change.',
-    need: 'Your own permission. A space where you are the priority for once. Not a plan for how to fix everything, but a place to hear yourself think about what you actually want.',
+    strength: 'You hold an enormous amount together, and you do it well. You\'re patient, steady, and reliable. When you finally turn that same energy towards your own life, things start to move.',
+    need: 'Your own permission. A space where you are the priority for once. Somewhere to hear yourself think about what you actually want, without having to fix everything straight away.',
     cta: 'If any of this feels familiar, I\'d love to talk. I offer a free, 30-minute conversation. No agenda, no pressure, no obligation. Just a straightforward chat to see if talking things through might help you find your way forward.'
   },
   weigher: {
@@ -23,13 +23,13 @@ const TYPES = {
     name: 'The Endless Weigher',
     tagline: 'You\'re not short on insight. You might be drowning in it.',
     description: [
-      'You\'re a thinker. A thorough, careful, see-it-from-every-angle thinker. And most of the time, that serves you brilliantly. You\'re the person people come to for considered advice, for different perspectives, for the question nobody else thought to ask.',
-      'But when it comes to your own life? All that thinking has become a bit of a trap. You\'ve analysed your options so thoroughly that they\'ve started to blur. Every path forward seems to reveal a new complication. If anything, you have too much self-awareness. You can see the pros and cons of everything, which means nothing feels like the obvious choice.',
-      'Here\'s what I\'ve noticed: the thinking feels productive. It feels like progress. But if you\'re honest with yourself, you\'ve been circling the same questions for longer than you\'d like to admit. The analysis isn\'t bringing you closer to a decision. It\'s protecting you from having to make one.',
-      'That\'s not a criticism. It\'s a very human thing to do. Staying in "thinking mode" is safer than committing to a direction that might be wrong. But the cost is real: while you\'re weighing it all up, life carries on without you.'
+      'You\'re a thinker. Thorough, careful, always looking at things from every angle. Most of the time, that serves you well. You\'re the person people come to for considered advice, for a different perspective, for the question nobody else thought to ask.',
+      'But when it comes to your own life, all that thinking has become a bit of a trap. You\'ve analysed your options so thoroughly that they\'ve started to blur. Every path forward reveals a new complication, and nothing feels like the obvious choice.',
+      'The thinking feels productive. It feels like you\'re making progress. But if you\'re honest with yourself, you\'ve been circling the same questions for longer than you\'d like to admit. The analysis isn\'t bringing you closer to a decision. If anything, it\'s giving you a reason to wait a bit longer.',
+      'That\'s a very human thing to do. Staying in thinking mode feels safer than committing to something that might be wrong. But there\'s a cost: while you\'re weighing everything up, life carries on.'
     ],
-    strength: 'A truly thoughtful mind. You see complexity where others don\'t. When you finally commit to a direction, your decisions tend to be well-considered and solid.',
-    need: 'A conversation with someone who won\'t add more options. Someone whose job is to help you hear the answer you already have, the one that keeps getting drowned out by all the other possibilities.',
+    strength: 'You have a genuinely thoughtful mind. You see complexity where others don\'t, and when you finally commit to a direction, those decisions tend to be good ones.',
+    need: 'A conversation with someone who won\'t add more options. Someone who can help you hear what you already know.',
     cta: 'If you\'re tired of going in circles, let\'s talk. I offer a free, 30-minute conversation. No pressure and no agenda. Just a chance to talk it through with someone who listens for a living.'
   },
   performer: {
@@ -37,42 +37,42 @@ const TYPES = {
     name: 'The Quiet Performer',
     tagline: 'Things look fine from the outside. That\'s part of the problem.',
     description: [
-      'From the outside, your life looks good. Maybe even enviable. You\'re competent, capable, and you\'ve built something that works. The problem is that "works" and "feels right" are not always the same thing.',
-      'You\'ve probably been aware of it for some time: there\'s a gap between the life people see and the one you actually experience. It\'s not that you\'re unhappy, exactly. It\'s more like a quiet sense of disconnection. A feeling of going through the motions. Of being very good at a role that doesn\'t quite fit anymore.',
+      'From the outside, your life looks good. You\'re competent, capable, and you\'ve built something that works. The trouble is, "works" and "feels right" aren\'t always the same thing.',
+      'You\'ve probably been aware of it for some time. There\'s a gap between the life people see and the one you actually experience. You\'re not unhappy, exactly. It\'s more of a quiet disconnection, a feeling of going through the motions, of being very good at a role that doesn\'t quite fit anymore.',
       'The tricky thing about this pattern is that it doesn\'t feel urgent enough to act on. Nobody is in crisis. Nothing is broken. And so you carry on, because what would you even say? "My perfectly fine life doesn\'t feel like mine"? It sounds ungrateful, even to your own ears.',
-      'But it\'s not ungrateful. It\'s honest. And that honesty, the willingness to admit that something is off even when it\'s hard to put into words, is something most people never reach.'
+      'It\'s not ungrateful, though. And the fact that you can see it, that you can feel something is off even when it\'s hard to put into words, is worth paying attention to.'
     ],
-    strength: 'Self-awareness. Most people in your position don\'t even notice the gap. The fact that you can feel something is off, even when everything looks fine, is a form of honesty that takes real courage.',
-    need: 'A space where you don\'t have to perform. Where you can say "I don\'t know what I want" or "I\'m not sure this is enough" without it being dramatic. Sometimes the most helpful thing is simply being heard.',
-    cta: 'If something here rang true, I\'m here. A free, 30-minute conversation is a quiet, confidential first step. No sales pitch, no obligation. Just a chance to say the things you haven\'t said out loud yet.'
+    strength: 'Self-awareness. You can sense that something is off, even when everything around you looks fine. Most people in your position don\'t even notice that gap.',
+    need: 'A space where you don\'t have to perform. Somewhere you can say "I don\'t know what I want" or "I\'m not sure this is enough" without it being a big deal. Sometimes the most helpful thing is simply being heard.',
+    cta: 'If something here rang true, I\'d love to talk. A free, 30-minute conversation is a quiet, confidential first step. No sales pitch, no obligation. Just a chance to talk about the things you haven\'t said out loud yet.'
   },
   juggler: {
     key: 'juggler',
     name: 'The Dutiful Juggler',
-    tagline: 'You hold a lot. And you hold it well. But somewhere in there, you\'ve lost sight of you.',
+    tagline: 'You hold a lot. Somewhere in all of that, you\'ve lost sight of you.',
     description: [
-      'You hold a lot. And you hold it well. That\'s not flattery, it\'s just a fact. You\'re the person who remembers, who organises, who shows up. The one people count on. And you don\'t resent it, not really. You care about the things you carry. The people, the responsibilities, the roles. They matter to you.',
-      'The trouble is, somewhere in all that juggling, you\'ve lost track of something: what you want. Not as a parent, partner, or professional. Just as you. It\'s been so long since you thought about your own needs as separate from everyone else\'s that the question "what do you actually want?" might stop you in your tracks for a moment.',
-      'This isn\'t because you\'re selfless to a fault (though you might be). It\'s because your identity has become so intertwined with your roles that it\'s hard to find where they end and you begin. "What everyone needs" and "what I want" have merged, and unpicking them feels complicated. Maybe even a bit frightening.',
-      'But here\'s the thing: the people who rely on you would be the first to say you deserve something for yourself. You\'re just the last person to believe it.'
+      'Your life is full of things that matter to you. People, responsibilities, roles you care about. You\'re the person everyone counts on, the one who keeps things running. And you don\'t resent it, not really.',
+      'The trouble is, somewhere in all that, you\'ve lost track of what you want. It\'s been so long since you thought about your own needs, separately from everyone else\'s, that the question "what do you actually want?" might stop you for a moment.',
+      'Your identity has become tied up with your roles. What everyone needs from you and what you want for yourself have blurred together, and unpicking them feels complicated. Maybe even a bit scary.',
+      'The people who rely on you would be the first to say you deserve something for yourself. You\'re just the last person to believe it.'
     ],
-    strength: 'Real emotional intelligence and the ability to hold multiple competing demands well. You\'re the person everyone leans on because you\'re good at it.',
-    need: 'Time that is just for you. A proper conversation where someone asks you, with real curiosity, what you want, and then listens without needing anything from you in return.',
-    cta: 'This could be a good first step. My free, 30-minute conversation is completely confidential, with no pressure and no obligation. Just a space where, for half an hour, you are the only person on the agenda.'
+    strength: 'You read situations well and you hold a lot of competing demands together. People lean on you because you\'re good at it.',
+    need: 'Time that is just for you. A proper conversation where someone asks what you want, and then actually listens.',
+    cta: 'This could be a good first step. My free, 30-minute conversation is completely confidential, no pressure, no obligation. Just a space where, for half an hour, it\'s about you.'
   },
   nearly: {
     key: 'nearly',
     name: 'The Nearly Ready',
     tagline: 'You\'re closer to change than you think.',
     description: [
-      'You\'re closer to change than you think. You know what you want, or at least you know the direction. You\'ve probably started to make it happen more than once. You\'ve thought about it, talked about it, maybe even taken a first step.',
+      'You\'re closer to change than you think. You know what you want, or at least you know the direction. You\'ve probably tried to make it happen more than once. Thought about it, talked about it, maybe even taken a first step.',
       'And then something pulled you back.',
-      'It might have been a wobble of confidence. A practical concern that suddenly loomed larger. A fear you couldn\'t quite name. Or just the weight of making a real, irreversible decision. So you retreated to the planning stage, where it feels safer. Where the change is still a possibility and not a commitment.',
-      'The pattern here isn\'t avoidance. It\'s something more subtle. You\'re not afraid of change itself. You\'re afraid of getting it wrong. Of leaping and discovering you\'ve landed in the wrong place. So you keep rehearsing the jump without ever leaving the edge. But notice this: you keep coming back. You keep standing at that edge. That isn\'t indecision. That\'s determination.'
+      'Maybe it was a wobble of confidence. A practical concern that suddenly felt bigger than it had before. Or just the weight of making a decision you can\'t easily undo. So you went back to the thinking stage, where it felt safer.',
+      'You\'re not avoiding change. You keep coming back to it, keep standing at that edge. The reason you haven\'t jumped yet isn\'t a lack of wanting to. You\'re just worried about getting it wrong.'
     ],
-    strength: 'Courage. You\'ve already done the hardest part: you\'ve been honest with yourself about what you want. The fact that you keep coming back to it tells you everything.',
-    need: 'Someone in your corner. Not someone to push you, but someone to walk alongside you as you figure out what the first real step looks like. Someone who takes the fear seriously and helps build a plan that feels manageable.',
-    cta: 'You\'re ready for a conversation. My free 30-minute call is a no-pressure, no-obligation first step. We\'ll just talk. About where you are, where you want to be, and what\'s standing between the two. Sometimes that\'s all it takes.'
+    strength: 'Courage. You keep coming back to this, and that tells you everything you need to know. You\'ve been honest with yourself about what you want, which is harder than most people realise.',
+    need: 'Someone in your corner. Not to push you, but to help you work out what the first step actually looks like, and to take the fear seriously while you do it.',
+    cta: 'You\'re ready for a conversation. My free 30-minute call is a no-pressure first step. We\'ll just talk about where you are and where you want to be.'
   }
 };
 
@@ -374,9 +374,12 @@ function showResults() {
   $('#result-name').textContent = type.name;
   $('#result-tagline').textContent = type.tagline;
 
-  // Build description paragraphs
+  // Build description paragraphs (paragraph 3 rendered as insight block for visual break)
   const descEl = $('#result-description');
-  descEl.innerHTML = type.description.map(p => `<p>${p}</p>`).join('');
+  descEl.innerHTML = type.description.map((p, i) => {
+    if (i === 2) return `<div class="insight-block"><p>${p}</p></div>`;
+    return `<p>${p}</p>`;
+  }).join('');
 
   // Strength and need
   $('#result-strength').textContent = type.strength;
