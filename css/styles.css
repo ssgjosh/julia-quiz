@@ -35,7 +35,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 17px;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -97,7 +97,6 @@ p {
   opacity: 0;
 }
 
-.screen.landing,
 .screen.quiz,
 .screen.email-capture {
   min-height: 100vh;
