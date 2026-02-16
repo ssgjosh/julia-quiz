@@ -131,7 +131,7 @@ p {
   padding: 20px 24px;
   text-align: center;
   background: var(--white);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--taupe-light);
 }
 
 .site-header .logo {
@@ -182,14 +182,27 @@ p {
   margin-right: auto;
 }
 
+.landing .subtitle::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--taupe);
+  margin: 32px auto 0;
+  border-radius: 1px;
+}
+
 .landing .body-copy {
   text-align: left;
   margin-bottom: 44px;
+  background: var(--taupe-pale);
+  padding: 28px 32px;
+  border-radius: var(--radius-sm);
 }
 
 .landing .body-copy p {
   margin-bottom: 18px;
-  color: var(--charcoal-light);
+  color: var(--charcoal);
   font-size: 1.02rem;
 }
 
@@ -239,7 +252,7 @@ p {
    ======================================== */
 
 .quiz {
-  background: var(--white);
+  background: var(--cream);
   padding-bottom: 60px;
 }
 
@@ -248,7 +261,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--white);
+  background: var(--cream);
   padding: 0;
   border-bottom: 1px solid var(--border);
 }
@@ -369,7 +382,7 @@ p {
   display: flex;
   align-items: flex-start;
   padding: 18px 22px;
-  background: var(--cream);
+  background: var(--white);
   border: 2px solid transparent;
   border-radius: var(--radius-md);
   cursor: pointer;
@@ -831,6 +844,10 @@ p {
 
   .landing .subtitle {
     font-size: 1.05rem;
+  }
+
+  .landing .body-copy {
+    padding: 22px 20px;
   }
 
   .question-area {
