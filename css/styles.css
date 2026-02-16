@@ -808,6 +808,35 @@ p {
 }
 
 /* ========================================
+   Wellbeing signposting
+   ======================================== */
+
+.wellbeing-note {
+  margin-top: 40px;
+  padding: 20px 24px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.wellbeing-note p {
+  font-size: 0.82rem;
+  color: var(--charcoal-muted);
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.wellbeing-note a {
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.wellbeing-note a:hover {
+  color: var(--accent);
+}
+
+/* ========================================
    Footer
    ======================================== */
 

@@ -16,7 +16,8 @@ const TYPES = {
     ],
     strength: 'You hold an enormous amount together, and you do it well. You\'re patient, steady, and reliable. When you finally turn that same energy towards your own life, things start to move.',
     need: 'Your own permission. A space where you are the priority for once. Somewhere to hear yourself think about what you actually want, without having to fix everything straight away.',
-    cta: 'If any of this feels familiar, I\'d love to talk. I have a free, 30-minute conversation that\'s there whenever you\'re ready. No agenda, no preparation needed. Just a chance to think out loud about what you actually want.'
+    ctaHeading: 'Whenever you\'re ready',
+    cta: 'If any of this feels familiar, there\'s a conversation waiting for you. Thirty minutes, completely free, whenever the time feels right. You don\'t need to prepare anything or know what you want to say. Just somewhere quiet to start thinking about what you actually need.'
   },
   weigher: {
     key: 'weigher',
@@ -30,7 +31,8 @@ const TYPES = {
     ],
     strength: 'You have a genuinely thoughtful mind. You see complexity where others don\'t, and when you finally commit to a direction, those decisions tend to be good ones.',
     need: 'A conversation with someone who won\'t add more options. Someone who can help you hear what you already know.',
-    cta: 'If you\'re tired of going in circles, let\'s talk. A free, 30-minute conversation. No extra options to weigh up, no homework. Just a chance to talk it through with someone who listens for a living.'
+    ctaHeading: 'One conversation. No extra decisions.',
+    cta: 'If you\'re tired of going in circles, let\'s talk. Thirty minutes. I won\'t give you more options to weigh up or send you away with homework. Sometimes the most useful thing is talking it through with someone who listens for a living.'
   },
   performer: {
     key: 'performer',
@@ -44,7 +46,8 @@ const TYPES = {
     ],
     strength: 'Self-awareness. You can sense that something is off, even when everything around you looks fine. Most people in your position don\'t even notice that gap.',
     need: 'A space where you don\'t have to perform. Somewhere you can say "I don\'t know what I want" or "I\'m not sure this is enough" without it being a big deal. Sometimes the most helpful thing is simply being heard.',
-    cta: 'If something here rang true, I\'d love to talk. A free, 30-minute conversation. Confidential, unhurried, and completely off the record. A chance to say the things you haven\'t said out loud yet.'
+    ctaHeading: 'Somewhere to be honest',
+    cta: 'If something here rang true, I\'d love to talk. Thirty minutes, completely free. Confidential, unhurried, and entirely off the record. A chance to say the things you haven\'t said out loud yet.'
   },
   juggler: {
     key: 'juggler',
@@ -58,7 +61,8 @@ const TYPES = {
     ],
     strength: 'People lean on you because you\'re genuinely good at holding things together. The same care you pour into everyone else\'s life could transform your own, if you let it.',
     need: 'Time that is just for you. A proper conversation where someone asks what you want, and then actually listens.',
-    cta: 'This could be a good first step. My free 30-minute conversation is just for you. No one else\'s needs on the table, no one else\'s agenda. Just half an hour to think about what you want.'
+    ctaHeading: 'Something just for you',
+    cta: 'This could be a good place to start. I have a free conversation that\'s just about you -- thirty minutes where nobody else\'s needs are on the agenda. When was the last time someone asked what you wanted and actually waited for the answer?'
   },
   nearly: {
     key: 'nearly',
@@ -67,12 +71,13 @@ const TYPES = {
     description: [
       'You\'re closer to change than you think. You know what you want, or at least you know the direction. You\'ve probably tried to make it happen more than once -- thought about it, talked about it, maybe even taken a first step. And then something pulled you back.',
       'Maybe it was a wobble of confidence, or a practical concern that suddenly felt bigger than it had before. Or just the weight of making a decision you can\'t easily undo. So you went back to thinking about it, where it felt safer.',
-      'Every time you pull back, it feels like proof that you\'re not ready. The wobble of confidence, the practical concern, the "maybe not yet" -- they all feel like evidence that you should wait. But that feeling isn\'t evidence. It\'s just what the edge of change feels like. Everyone who\'s ever done something that scared them felt exactly this. They just did it before the feeling went away.',
-      'You\'re probably reading this thinking "but what if I try and it doesn\'t work?" That\'s the fear talking, and it makes sense. But at some point, the cost of staying where you are starts to outweigh the risk of getting it wrong. You might already be there.'
+      'You keep coming back to this. That tells you something. You want the change -- you\'re just worried about getting it wrong. Every time you hesitate, you treat the wobble as proof you should wait a bit longer. But there\'s a difference between not being ready and being scared of getting it wrong. You already know which one this is.',
+      'The question you keep asking -- "what if it doesn\'t work?" -- is a reasonable one. But it\'s also the question that keeps you exactly where you are. At some point, the bigger risk isn\'t getting it wrong. It\'s spending another year nearly doing the thing you actually want to do.'
     ],
-    strength: 'Courage. Most people who feel this fear simply stop coming back. You don\'t. You\'ve been honest with yourself about what you want, which is harder than most people realise.',
-    need: 'Someone in your corner. Not to push you, but to help you work out what the first step actually looks like, and to take the fear seriously while you do it.',
-    cta: 'You\'re ready for a conversation. My free 30-minute call is a chance to talk about where you are, what\'s holding you back, and what the first step might actually look like. No pressure, no commitment.'
+    strength: 'Persistence. Most people in your position find a reason to look away and carry on as they are. You keep coming back to it. That quiet honesty about what you want is harder than most people realise, and it matters more than you think.',
+    need: 'Someone in your corner. Not to push you, but to help you work out what the first step actually looks like -- and to take the hesitation seriously rather than just telling you to feel the fear and do it anyway.',
+    ctaHeading: 'The first step is smaller than you think',
+    cta: 'If you\'ve been going back and forth about this, a conversation might be the thing that tips the balance. Thirty minutes, just to talk it through -- what\'s actually in the way, and what the first step could look like.'
   }
 };
 
@@ -387,6 +392,8 @@ function showResults() {
   $('#result-need').textContent = type.need;
 
   // CTA
+  const ctaHeading = document.querySelector('.results-cta h3');
+  if (ctaHeading && type.ctaHeading) ctaHeading.textContent = type.ctaHeading;
   $('#result-cta-text').textContent = type.cta;
 
   // Secondary type (show if second-highest score is within 1 point of primary)
