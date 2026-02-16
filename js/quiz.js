@@ -12,7 +12,7 @@ const TYPES = {
       'You have a pattern, and it\'s a kind one. When life gets busy or complicated, your own needs quietly move to the bottom of the list. There\'s always something more pressing, or someone who needs you, or a perfectly good reason why now isn\'t the right time.',
       'You\'ve been saying "not yet" for a while now. And on some level, you know that. There\'s a quiet frustration beneath all that patience, a sense that your turn keeps getting put off, and that you might be the one doing the putting off.',
       'When I work with people who share this pattern, I notice the same thing. The waiting is rarely about timing. Somewhere along the way, you picked up the idea that your needs come after everyone else\'s, that taking time for yourself is indulgent, and that the right moment will just arrive on its own. It never does, of course. But the belief runs deep.',
-      'Your steadiness and patience are real strengths. And the fact that you\'re here, taking this quiz, tells me something important: part of you already knows it\'s time.'
+      'You\'re probably reading this thinking "but I can\'t just drop everything." Nobody is asking you to. The same steadiness that keeps everyone else afloat is a genuine strength. And the fact that you\'re here, reading this, tells me something: part of you already knows it\'s time.'
     ],
     strength: 'You hold an enormous amount together, and you do it well. You\'re patient, steady, and reliable. When you finally turn that same energy towards your own life, things start to move.',
     need: 'Your own permission. A space where you are the priority for once. Somewhere to hear yourself think about what you actually want, without having to fix everything straight away.',
@@ -20,13 +20,13 @@ const TYPES = {
   },
   weigher: {
     key: 'weigher',
-    name: 'The Overthinker',
+    name: 'The One Who Circles',
     tagline: 'You\'re not short on insight. You might be drowning in it.',
     description: [
       'You\'re a thinker. Thorough, careful, always looking at things from every angle. Most of the time, that serves you well. You\'re the person people come to for considered advice, for a different perspective, for the question nobody else thought to ask.',
       'But when it comes to your own life, all that thinking has become a bit of a trap. You\'ve analysed your options so thoroughly that they\'ve started to blur. Every path forward reveals a new complication, and nothing feels like the obvious choice.',
       'The thinking feels productive, like you\'re making progress. But if you\'re honest with yourself, you\'ve been circling the same questions for longer than you\'d like to admit. The analysis isn\'t bringing you closer to a decision -- if anything, it\'s become the reason to wait a bit longer.',
-      'That\'s a very human thing to do. Staying in thinking mode feels safer than committing to something that might be wrong. But there\'s a cost: while you\'re weighing everything up, life carries on.'
+      'You\'re probably already analysing whether this is accurate. That\'s the pattern, right there. Staying in thinking mode feels safer than committing to something that might be wrong. But there\'s a cost: while you\'re weighing everything up, life carries on.'
     ],
     strength: 'You have a genuinely thoughtful mind. You see complexity where others don\'t, and when you finally commit to a direction, those decisions tend to be good ones.',
     need: 'A conversation with someone who won\'t add more options. Someone who can help you hear what you already know.',
@@ -48,15 +48,15 @@ const TYPES = {
   },
   juggler: {
     key: 'juggler',
-    name: 'The Dutiful Juggler',
+    name: 'The One Everyone Leans On',
     tagline: 'You hold a lot. Somewhere in all of that, you\'ve lost sight of you.',
     description: [
       'Your life is full of things that matter to you. People, responsibilities, roles you care about. You\'re the person everyone counts on, the one who keeps things running. And you don\'t resent it, not really.',
-      'The trouble is, somewhere in all that, you\'ve lost track of what you want. It\'s been so long since you thought about your own needs, separately from everyone else\'s, that the question "what do you actually want?" might stop you for a moment.',
-      'It\'s hard to know where the roles end and you begin. What everyone needs from you and what you want for yourself have blurred together, and unpicking them feels complicated. Maybe even a bit scary.',
-      'The people who rely on you would be the first to say you deserve something for yourself. You\'re just the last person to believe it.'
+      'The trouble is, somewhere in all of that, you\'ve lost track of what you want. If someone sat you down right now and asked -- just you, not as anyone\'s mum or partner or colleague -- "what do you actually want?", you might not have an answer. Not because you don\'t want things. But because it\'s been so long since anyone asked. Including you.',
+      'What people don\'t see is what it actually costs you. Everyone sees someone who copes brilliantly. Nobody sees the moment at the end of the day when you sit down and wonder when your life started feeling like something you manage rather than something you live.',
+      'You\'re probably reading this in a rare quiet moment, already half-thinking about what everyone else needs. The people who rely on you would be the first to say you deserve something for yourself. You\'re just the last person to believe it.'
     ],
-    strength: 'You read situations well and you hold a lot of competing demands together. People lean on you because you\'re good at it.',
+    strength: 'People lean on you because you\'re genuinely good at holding things together. The same care you pour into everyone else\'s life could transform your own, if you let it.',
     need: 'Time that is just for you. A proper conversation where someone asks what you want, and then actually listens.',
     cta: 'This could be a good first step. My free 30-minute conversation is just for you. No one else\'s needs on the table, no one else\'s agenda. Just half an hour to think about what you want.'
   },
@@ -67,10 +67,10 @@ const TYPES = {
     description: [
       'You\'re closer to change than you think. You know what you want, or at least you know the direction. You\'ve probably tried to make it happen more than once -- thought about it, talked about it, maybe even taken a first step. And then something pulled you back.',
       'Maybe it was a wobble of confidence, or a practical concern that suddenly felt bigger than it had before. Or just the weight of making a decision you can\'t easily undo. So you went back to thinking about it, where it felt safer.',
-      'You keep coming back to this. That tells you something. You want the change -- you\'re just worried about getting it wrong.',
-      'That worry makes sense. But the fact that you keep coming back tells you something important about how much this matters to you.'
+      'Every time you pull back, it feels like proof that you\'re not ready. The wobble of confidence, the practical concern, the "maybe not yet" -- they all feel like evidence that you should wait. But that feeling isn\'t evidence. It\'s just what the edge of change feels like. Everyone who\'s ever done something that scared them felt exactly this. They just did it before the feeling went away.',
+      'You\'re probably reading this thinking "but what if I try and it doesn\'t work?" That\'s the fear talking, and it makes sense. But at some point, the cost of staying where you are starts to outweigh the risk of getting it wrong. You might already be there.'
     ],
-    strength: 'Courage. You keep coming back to this, and that tells you everything you need to know. You\'ve been honest with yourself about what you want, which is harder than most people realise.',
+    strength: 'Courage. Most people who feel this fear simply stop coming back. You don\'t. You\'ve been honest with yourself about what you want, which is harder than most people realise.',
     need: 'Someone in your corner. Not to push you, but to help you work out what the first step actually looks like, and to take the fear seriously while you do it.',
     cta: 'You\'re ready for a conversation. My free 30-minute call is a chance to talk about where you are, what\'s holding you back, and what the first step might actually look like. No pressure, no commitment.'
   }
