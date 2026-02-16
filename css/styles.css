@@ -654,12 +654,21 @@ p {
   line-height: 1.6;
 }
 
-/* Strengths & needs */
+/* Strengths & needs -- warm taupe band */
+.results-traits-band {
+  background: var(--taupe-pale);
+  padding: 48px 24px;
+}
+
+.results-traits-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
 .trait-grid {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin: 36px 0;
+  gap: 28px;
 }
 
 .trait-card {
@@ -686,12 +695,9 @@ p {
   margin-bottom: 0;
 }
 
-/* Divider */
-.divider {
-  width: 48px;
-  height: 2px;
-  background: var(--taupe);
-  margin: 40px 0;
+/* Bottom results section */
+.results-bottom {
+  padding-top: 48px;
 }
 
 /* CTA section */
@@ -700,8 +706,7 @@ p {
   border-radius: var(--radius-md);
   padding: 40px 32px;
   text-align: center;
-  margin-top: 48px;
-  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
 }
 
 .results-cta h3 {

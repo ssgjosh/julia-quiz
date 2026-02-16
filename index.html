@@ -106,9 +106,8 @@
       <p class="tagline" id="result-tagline"></p>
     </div>
 
-    <!-- Content -->
+    <!-- Description -->
     <div class="results-content">
-
       <div class="section">
         <div id="result-description">
           <!-- Paragraphs injected by JS -->
@@ -119,27 +118,31 @@
       <div id="secondary-type" class="secondary-type" style="display: none;">
         <p id="secondary-text"></p>
       </div>
+    </div>
 
-      <!-- Strength & Need cards -->
-      <div class="trait-grid">
-        <div class="trait-card strength">
-          <div class="trait-label">Your hidden strength</div>
-          <p id="result-strength"></p>
-        </div>
-        <div class="trait-card need">
-          <div class="trait-label">What you need right now</div>
-          <p id="result-need"></p>
+    <!-- Strength & Need (warm band) -->
+    <div class="results-traits-band">
+      <div class="results-traits-inner">
+        <div class="trait-grid">
+          <div class="trait-card strength">
+            <div class="trait-label">Your hidden strength</div>
+            <p id="result-strength"></p>
+          </div>
+          <div class="trait-card need">
+            <div class="trait-label">What you need right now</div>
+            <p id="result-need"></p>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="divider"></div>
-
-      <!-- CTA -->
+    <!-- CTA -->
+    <div class="results-content results-bottom">
       <div class="results-cta">
         <h3>Ready to talk?</h3>
         <p id="result-cta-text"></p>
         <a href="https://juliathecoach.com/pages/30-minute-conversation" class="btn-primary" target="_blank" rel="noopener">Book a Free Conversation</a>
-        <p class="cta-note">30 minutes. No pressure. No obligation.</p>
+        <p class="cta-note">30 minutes, no pressure, no obligation.</p>
       </div>
 
       <!-- Share -->
@@ -157,7 +160,6 @@
       <div class="retake-wrap">
         <button class="retake-btn" onclick="retakeQuiz()">Retake the quiz</button>
       </div>
-
     </div>
   </section>
 
