@@ -6,13 +6,13 @@
 const TYPES = {
   postponer: {
     key: 'postponer',
-    name: 'The One Who Waits',
+    name: 'The One Who Says Not Yet',
     tagline: 'You know something needs to change. You\'ve known for a while.',
     description: [
       'You have a pattern, and it\'s a kind one. When life gets busy or complicated, your own needs quietly move to the bottom of the list. There\'s always something more pressing, or someone who needs you, or a perfectly good reason why now isn\'t the right time.',
       'You\'ve been saying "not yet" for a while now. And on some level, you know that. There\'s a quiet frustration beneath all that patience, a sense that your turn keeps getting put off, and that you might be the one doing the putting off.',
-      'When I work with people who share this pattern, I notice the same thing. The waiting is rarely about timing. Somewhere along the way, you picked up the idea that your needs come after everyone else\'s, that taking time for yourself is indulgent, and that the right moment will just arrive on its own. It never does, of course. But the belief runs deep.',
-      'You\'re probably reading this thinking "but I can\'t just drop everything." Nobody is asking you to. The same steadiness that keeps everyone else afloat is a genuine strength. And the fact that you\'re here, reading this, tells me something: part of you already knows it\'s time.'
+      'When I work with people who share this pattern, I notice the same thing. The waiting is rarely about timing. It\'s about a belief that runs deeper than you\'d think -- that your needs come after everyone else\'s, that taking time for yourself is somehow indulgent. You\'re waiting for permission that nobody else is going to give you. And you\'re waiting for a right moment that, honestly, was never going to arrive on its own.',
+      'Nobody is asking you to drop everything. That steadiness of yours, the thing that keeps everyone else afloat, it\'s not going anywhere. But there\'s a difference between being patient and being permanently last in the queue. And the fact that you\'re here tells me you can feel the difference.'
     ],
     strength: 'You hold an enormous amount together, and you do it well. You\'re patient, steady, and reliable. When you finally turn that same energy towards your own life, things start to move.',
     need: 'Your own permission. A space where you are the priority for once. Somewhere to hear yourself think about what you actually want, without having to fix everything straight away.',
@@ -26,7 +26,7 @@ const TYPES = {
     description: [
       'You\'re a thinker. Thorough, careful, always looking at things from every angle. Most of the time, that serves you well. You\'re the person people come to for considered advice, for a different perspective, for the question nobody else thought to ask.',
       'But when it comes to your own life, all that thinking has become a bit of a trap. You\'ve analysed your options so thoroughly that they\'ve started to blur. Every path forward reveals a new complication, and nothing feels like the obvious choice.',
-      'The thinking feels productive, like you\'re making progress. But if you\'re honest with yourself, you\'ve been circling the same questions for longer than you\'d like to admit. The analysis isn\'t bringing you closer to a decision -- if anything, it\'s become the reason to wait a bit longer.',
+      'Here\'s what I think is actually going on. The thinking isn\'t slowing you down because the decision is complicated. It\'s slowing you down because making a decision would mean closing doors. As long as you\'re still weighing things up, you don\'t have to commit to being wrong. The analysis feels like progress, but it\'s actually protection.',
       'You\'re probably already analysing whether this is accurate. That\'s the pattern, right there. Staying in thinking mode feels safer than committing to something that might be wrong. But there\'s a cost: while you\'re weighing everything up, life carries on.'
     ],
     strength: 'You have a genuinely thoughtful mind. You see complexity where others don\'t, and when you finally commit to a direction, those decisions tend to be good ones.',
@@ -44,7 +44,7 @@ const TYPES = {
       'The tricky thing about this pattern is that it doesn\'t feel urgent enough to act on. Nobody is in crisis. Nothing is broken. And so you carry on, because what would you even say? "My perfectly fine life doesn\'t feel like mine"? It sounds ungrateful, even to your own ears.',
       'It\'s not ungrateful, though. And the fact that you can see it, that you can feel something is off even when it\'s hard to put into words, is worth paying attention to.'
     ],
-    strength: 'Self-awareness. You can sense that something is off, even when everything around you looks fine. Most people in your position don\'t even notice that gap.',
+    strength: 'You\'re sharp enough to see what most people miss. You\'ve built something that genuinely works from the outside, and you can feel exactly where it stops working on the inside. That kind of honesty -- the refusal to pretend that fine is enough -- is rarer than you think.',
     need: 'A space where you don\'t have to perform. Somewhere you can say "I don\'t know what I want" or "I\'m not sure this is enough" without it being a big deal. Sometimes the most helpful thing is simply being heard.',
     ctaHeading: 'Somewhere to be honest',
     cta: 'If something here rang true, I\'d love to talk. Thirty minutes, completely free. Confidential, unhurried, and entirely off the record. A chance to say the things you haven\'t said out loud yet.'
@@ -57,7 +57,7 @@ const TYPES = {
       'Your life is full of things that matter to you. People, responsibilities, roles you care about. You\'re the person everyone counts on, the one who keeps things running. And you don\'t resent it, not really.',
       'The trouble is, somewhere in all of that, you\'ve lost track of what you want. If someone sat you down right now and asked -- just you, not as anyone\'s mum or partner or colleague -- "what do you actually want?", you might not have an answer. Not because you don\'t want things. But because it\'s been so long since anyone asked. Including you.',
       'What people don\'t see is what it actually costs you. Everyone sees someone who copes brilliantly. Nobody sees the moment at the end of the day when you sit down and wonder when your life started feeling like something you manage rather than something you live.',
-      'You\'re probably reading this in a rare quiet moment, already half-thinking about what everyone else needs. The people who rely on you would be the first to say you deserve something for yourself. You\'re just the last person to believe it.'
+      'The people who rely on you would be the first to say you deserve something for yourself. They can see it, even if you can\'t. You\'re just the last person to believe it.'
     ],
     strength: 'People lean on you because you\'re genuinely good at holding things together. The same care you pour into everyone else\'s life could transform your own, if you let it.',
     need: 'Time that is just for you. A proper conversation where someone asks what you want, and then actually listens.',
@@ -117,17 +117,6 @@ const QUESTIONS = [
   },
   {
     number: 4,
-    text: 'When you imagine making a big change in your life, what\'s the first thought that follows?',
-    options: [
-      { text: '"But what about everyone else? They\'re relying on me."', type: 'juggler' },
-      { text: '"What if I get it wrong? I need to think about this more carefully."', type: 'weigher' },
-      { text: '"I\'ll get to it. Once things calm down a bit."', type: 'postponer' },
-      { text: '"I want to. I really do. So why haven\'t I?"', type: 'nearly' },
-      { text: '"Would anyone even understand why I want to change? My life is perfectly fine on paper."', type: 'performer' }
-    ]
-  },
-  {
-    number: 5,
     text: 'How do you typically spend the last hour before bed?',
     options: [
       { text: 'Replaying the day, wondering if anyone saw through the "I\'m fine."', type: 'performer' },
@@ -135,6 +124,17 @@ const QUESTIONS = [
       { text: 'Running through the list of everything I need to do for other people tomorrow.', type: 'juggler' },
       { text: 'Telling myself I\'ll think about it properly at the weekend, or once things slow down a bit.', type: 'postponer' },
       { text: 'Feeling restless. Like there\'s something I should be doing but I can\'t quite bring myself to start.', type: 'nearly' }
+    ]
+  },
+  {
+    number: 5,
+    text: 'When you imagine making a big change in your life, what\'s the first thought that follows?',
+    options: [
+      { text: '"But what about everyone else? They\'re relying on me."', type: 'juggler' },
+      { text: '"What if I get it wrong? I need to think about this more carefully."', type: 'weigher' },
+      { text: '"I\'ll get to it. Once things calm down a bit."', type: 'postponer' },
+      { text: '"I want to. I really do. So why haven\'t I?"', type: 'nearly' },
+      { text: '"Would anyone even understand why I want to change? My life is perfectly fine on paper."', type: 'performer' }
     ]
   },
   {
@@ -181,7 +181,8 @@ let answers = [];
 let scores = { postponer: 0, weigher: 0, performer: 0, juggler: 0, nearly: 0 };
 
 // Weighted scoring: diagnostic questions count more, weak questions count less
-const QUESTION_WEIGHTS = [1.0, 1.0, 1.5, 1.5, 0.75, 1.0, 1.0, 1.25];
+// Order: Q1(1.0), Q2(1.0), Q3-stuck(1.5), Q4-bedtime(0.75), Q5-big-change(1.5), Q6(1.0), Q7(1.0), Q8(1.25)
+const QUESTION_WEIGHTS = [1.0, 1.0, 1.5, 0.75, 1.5, 1.0, 1.0, 1.25];
 
 // ========================================
 // DOM helpers
@@ -353,17 +354,17 @@ function calculateResult() {
     }
   }
 
-  // Tiebreaker: favour Q3 (index 2) and Q4 (index 3) answers, then Q8 (index 7)
+  // Tiebreaker: favour diagnostic questions (stuck=index 2, big-change=index 4), then Q8 (index 7)
   const tiedTypes = Object.entries(scores)
     .filter(([, score]) => score === maxScore)
     .map(([type]) => type);
 
   if (tiedTypes.length > 1) {
-    // Check Q3 and Q4
-    const q3Answer = answers[2];
-    const q4Answer = answers[3];
-    if (tiedTypes.includes(q3Answer)) return q3Answer;
-    if (tiedTypes.includes(q4Answer)) return q4Answer;
+    // Check diagnostic questions (stuck Q3 and big-change Q5)
+    const stuckAnswer = answers[2];
+    const bigChangeAnswer = answers[4];
+    if (tiedTypes.includes(stuckAnswer)) return stuckAnswer;
+    if (tiedTypes.includes(bigChangeAnswer)) return bigChangeAnswer;
     // Check Q8
     const q8Answer = answers[7];
     if (tiedTypes.includes(q8Answer)) return q8Answer;
