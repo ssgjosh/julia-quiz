@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What's Really Keeping You Stuck? | Julia Ancliff Coach</title>
+  <meta name="description" content="A 3-minute reflection to help you understand the pattern beneath the surface, and what might help you move forward. Free quiz from Julia Ancliff, life coach.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&family=Domine:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Favicon (matches Julia's brand) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23102673'/><text x='50%25' y='55%25' font-size='18' text-anchor='middle' dominant-baseline='middle' fill='white' font-family='serif'>J</text></svg>">
+</head>
+<body>
+
+  <!-- ========================================
+       Header
+       ======================================== -->
+  <header class="site-header">
+    <a href="https://juliathecoach.com" class="logo">
+      Julia Ancliff
+      <span>Coach</span>
+    </a>
+  </header>
+
+  <!-- ========================================
+       Screen 1: Landing
+       ======================================== -->
+  <main id="landing-screen" class="screen landing active">
+    <div class="landing-inner">
+      <h1>What's really keeping you stuck?</h1>
+      <p class="subtitle">A 3-minute reflection to help you understand the pattern beneath the surface.</p>
+
+      <div class="body-copy">
+        <p>Most of us know when something isn't quite right. A career that used to fit but doesn't anymore. A relationship that needs attention. A quiet but persistent sense that the path you're on isn't the one you'd choose again.</p>
+        <p>The challenge is that "stuck" isn't one thing. It shows up differently for different people. Some of us postpone. Some of us overthink. Some of us perform being fine when we're not. Understanding your particular pattern is the first step towards changing it.</p>
+        <p>Eight honest questions. No wrong answers. No judgments. You might find it surprisingly clarifying.</p>
+      </div>
+
+      <button class="btn-primary" onclick="startQuiz()">Start the Quiz</button>
+      <p class="fine-print">Free. Private. No spam. Just a bit of clarity.</p>
+    </div>
+  </main>
+
+  <!-- ========================================
+       Screen 2: Quiz
+       ======================================== -->
+  <section id="quiz-screen" class="screen quiz">
+    <div class="progress-wrap">
+      <div class="progress-bar-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Quiz progress">
+        <div class="progress-bar"></div>
+      </div>
+      <div class="progress-info">
+        <button class="progress-back" onclick="goBack()" aria-label="Go back to previous question">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style="vertical-align: middle; margin-right: 4px;">
+            <path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back
+        </button>
+        <span class="progress-step">Question 1 of 8</span>
+      </div>
+    </div>
+
+    <div id="question-area" class="question-area">
+      <!-- Questions rendered here by JS -->
+    </div>
+  </section>
+
+  <!-- ========================================
+       Screen 3: Email Capture
+       ======================================== -->
+  <section id="email-screen" class="screen email-capture">
+    <div class="email-inner">
+      <h2>Your result is ready.</h2>
+      <p class="subtitle">Pop your details in below and I'll send you a personalised breakdown of your result, along with a short reflection that might help you take the next step.</p>
+
+      <form class="email-form" onsubmit="submitEmail(event)">
+        <label for="quiz-firstName" class="sr-only">Your first name</label>
+        <input type="text" id="quiz-firstName" name="firstName" placeholder="Your first name" required autocomplete="given-name">
+        <label for="quiz-email" class="sr-only">Your email address</label>
+        <input type="email" id="quiz-email" name="email" placeholder="Your email address" required autocomplete="email">
+        <button type="submit" class="btn-primary">See My Result</button>
+      </form>
+      <p class="fine-print">I'll send you your detailed result and a short series of reflections over the next week or so. You can unsubscribe at any time. No spam, ever.</p>
+
+      <button class="skip-link" onclick="skipEmail()" aria-label="Skip email signup and see result">Skip this and see my result</button>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Screen 4: Results
+       ======================================== -->
+  <section id="results-screen" class="screen results">
+
+    <!-- Hero -->
+    <div class="results-hero">
+      <span class="label">Your result</span>
+      <h1 id="result-name"></h1>
+      <p class="tagline" id="result-tagline"></p>
+    </div>
+
+    <!-- Content -->
+    <div class="results-content">
+
+      <div class="section">
+        <h3>And here's what that actually means.</h3>
+        <div id="result-description">
+          <!-- Paragraphs injected by JS -->
+        </div>
+      </div>
+
+      <!-- Strength & Need cards -->
+      <div class="trait-grid">
+        <div class="trait-card strength">
+          <div class="trait-label">Your hidden strength</div>
+          <p id="result-strength"></p>
+        </div>
+        <div class="trait-card need">
+          <div class="trait-label">What you need right now</div>
+          <p id="result-need"></p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- CTA -->
+      <div class="results-cta">
+        <h3>Ready to talk?</h3>
+        <p id="result-cta-text"></p>
+        <a href="https://juliathecoach.com/pages/30-minute-conversation" class="btn-primary" target="_blank" rel="noopener">Book a Free Conversation</a>
+        <p class="cta-note">30 minutes. No pressure. No obligation.</p>
+      </div>
+
+      <!-- Retake -->
+      <div class="retake-wrap">
+        <button class="retake-btn" onclick="retakeQuiz()">Retake the quiz</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================
+       Footer
+       ======================================== -->
+  <footer class="site-footer">
+    <p>&copy; 2026 <a href="https://juliathecoach.com">Julia Ancliff Coach</a>. Clarity through conversation.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/quiz.js"></script>
+
+</body>
+</html>
