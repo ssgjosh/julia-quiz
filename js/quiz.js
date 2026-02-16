@@ -16,7 +16,7 @@ const TYPES = {
     ],
     strength: 'You hold an enormous amount together, and you do it well. You\'re patient, steady, and reliable. When you finally turn that same energy towards your own life, things start to move.',
     need: 'Your own permission. A space where you are the priority for once. Somewhere to hear yourself think about what you actually want, without having to fix everything straight away.',
-    cta: 'If any of this feels familiar, I\'d love to talk. I offer a free, 30-minute conversation. No agenda, no pressure, no obligation. Just a straightforward chat to see if talking things through might help you find your way forward.'
+    cta: 'If any of this feels familiar, I\'d love to talk. I have a free, 30-minute conversation that\'s there whenever you\'re ready. No agenda, no preparation needed. Just a chance to think out loud about what you actually want.'
   },
   weigher: {
     key: 'weigher',
@@ -30,7 +30,7 @@ const TYPES = {
     ],
     strength: 'You have a genuinely thoughtful mind. You see complexity where others don\'t, and when you finally commit to a direction, those decisions tend to be good ones.',
     need: 'A conversation with someone who won\'t add more options. Someone who can help you hear what you already know.',
-    cta: 'If you\'re tired of going in circles, let\'s talk. I offer a free, 30-minute conversation. No pressure and no agenda. Just a chance to talk it through with someone who listens for a living.'
+    cta: 'If you\'re tired of going in circles, let\'s talk. A free, 30-minute conversation. No extra options to weigh up, no homework. Just a chance to talk it through with someone who listens for a living.'
   },
   performer: {
     key: 'performer',
@@ -44,7 +44,7 @@ const TYPES = {
     ],
     strength: 'Self-awareness. You can sense that something is off, even when everything around you looks fine. Most people in your position don\'t even notice that gap.',
     need: 'A space where you don\'t have to perform. Somewhere you can say "I don\'t know what I want" or "I\'m not sure this is enough" without it being a big deal. Sometimes the most helpful thing is simply being heard.',
-    cta: 'If something here rang true, I\'d love to talk. A free, 30-minute conversation is a quiet, confidential first step. No sales pitch, no obligation. Just a chance to talk about the things you haven\'t said out loud yet.'
+    cta: 'If something here rang true, I\'d love to talk. A free, 30-minute conversation. Confidential, unhurried, and completely off the record. A chance to say the things you haven\'t said out loud yet.'
   },
   juggler: {
     key: 'juggler',
@@ -58,7 +58,7 @@ const TYPES = {
     ],
     strength: 'You read situations well and you hold a lot of competing demands together. People lean on you because you\'re good at it.',
     need: 'Time that is just for you. A proper conversation where someone asks what you want, and then actually listens.',
-    cta: 'This could be a good first step. My free, 30-minute conversation is completely confidential, no pressure, no obligation. Just a space where, for half an hour, it\'s about you.'
+    cta: 'This could be a good first step. My free 30-minute conversation is just for you. No one else\'s needs on the table, no one else\'s agenda. Just half an hour to think about what you want.'
   },
   nearly: {
     key: 'nearly',
@@ -67,12 +67,12 @@ const TYPES = {
     description: [
       'You\'re closer to change than you think. You know what you want, or at least you know the direction. You\'ve probably tried to make it happen more than once -- thought about it, talked about it, maybe even taken a first step. And then something pulled you back.',
       'Maybe it was a wobble of confidence, or a practical concern that suddenly felt bigger than it had before. Or just the weight of making a decision you can\'t easily undo. So you went back to thinking about it, where it felt safer.',
-      'You\'re not avoiding change. You keep coming back to it. The reason you haven\'t made the leap isn\'t that you don\'t want to -- you\'re just worried about getting it wrong.',
+      'You keep coming back to this. That tells you something. You want the change -- you\'re just worried about getting it wrong.',
       'That worry makes sense. But the fact that you keep coming back tells you something important about how much this matters to you.'
     ],
     strength: 'Courage. You keep coming back to this, and that tells you everything you need to know. You\'ve been honest with yourself about what you want, which is harder than most people realise.',
     need: 'Someone in your corner. Not to push you, but to help you work out what the first step actually looks like, and to take the fear seriously while you do it.',
-    cta: 'You\'re ready for a conversation. My free 30-minute call is a chance to talk about where you are, what\'s holding you back, and what the first step might actually look like. No pressure, no obligation.'
+    cta: 'You\'re ready for a conversation. My free 30-minute call is a chance to talk about where you are, what\'s holding you back, and what the first step might actually look like. No pressure, no commitment.'
   }
 };
 
