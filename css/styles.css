@@ -95,6 +95,11 @@ p {
 .screen {
   display: none;
   opacity: 0;
+}
+
+.screen.landing,
+.screen.quiz,
+.screen.email-capture {
   min-height: 100vh;
 }
 
@@ -651,39 +656,33 @@ p {
 
 /* Strengths & needs */
 .trait-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   margin: 36px 0;
 }
 
 .trait-card {
-  background: var(--white);
-  border-radius: var(--radius-md);
-  padding: 24px;
-  box-shadow: var(--shadow-sm);
+  padding: 0 0 0 20px;
+  border-left: 3px solid var(--taupe);
 }
 
 .trait-card .trait-label {
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--taupe);
-  margin-bottom: 8px;
-}
-
-.trait-card.strength {
-  border-top: 3px solid var(--taupe);
+  color: var(--charcoal-muted);
+  margin-bottom: 6px;
 }
 
 .trait-card.need {
-  border-top: 3px solid var(--navy);
+  border-left-color: var(--navy);
 }
 
 .trait-card p {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.98rem;
+  line-height: 1.7;
   margin-bottom: 0;
 }
 
@@ -698,12 +697,11 @@ p {
 /* CTA section */
 .results-cta {
   background: var(--white);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   padding: 40px 32px;
   text-align: center;
   margin-top: 48px;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
 }
 
 .results-cta h3 {
@@ -816,11 +814,6 @@ p {
    ======================================== */
 
 @media (max-width: 768px) {
-  .trait-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
   .results-cta {
     padding: 32px 24px;
   }
